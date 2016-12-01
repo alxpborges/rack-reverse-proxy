@@ -148,7 +148,7 @@ module RackReverseProxy
 
       def substitute(url)
         found.each_with_index.inject(url) do |acc, (match, i)|
-          acc.gsub("$#{i}", match)
+          acc.gsub("$#{i+1}", match.to_s)
         end
       end
 
